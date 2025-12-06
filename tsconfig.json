@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es2017",
+        "outDir": "wwwroot/js",
+        "rootDir": "src",
+        "sourceMap": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

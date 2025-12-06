@@ -1,0 +1,28 @@
+@page "/"
+@inject IJSRuntime JS
+@* IJSRuntime is the service used to communicate between C# and JavaScript *@
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<!-- Button that triggers the C# method when clicked -->
+<button class="btn btn-primary" @onclick="CallTsFunction">Click me</button>
+
+@code {
+    // Text to display in the alert
+    private string message = "Hello from Blazor!";
+
+    /// <summary>
+    /// This method is called when the button is clicked.
+    /// It demonstrates how to invoke a JavaScript function that was defined in TypeScript.
+    /// </summary>
+    private async Task CallTsFunction()
+    {
+        // "example.showAlert" corresponds to the object we attached to the window in example.ts.
+        // We pass the string "Hello from Blazor!" as an argument to the JS function.
+        await JS.InvokeVoidAsync("example.showAlert", message);
+    }
+}

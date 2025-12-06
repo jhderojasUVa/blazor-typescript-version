@@ -1,0 +1,5 @@
+# Directories to avoid
+node_modules
+bin
+obj
+wwwroot/js
